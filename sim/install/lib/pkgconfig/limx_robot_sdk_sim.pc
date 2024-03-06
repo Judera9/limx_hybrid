@@ -1,0 +1,8 @@
+prefix=/home/clear/limx_hybrid2/wheel_legged_gazebo_ros/install
+
+Name: limx_robot_sdk_sim
+Description: Description of limx_robot_sdk_sim
+Version: 0.0.1
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp

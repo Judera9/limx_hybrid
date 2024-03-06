@@ -1,0 +1,5 @@
+{
+    "cmake.sourceDirectory": "/home/clear/limx_hybrid2/wheel_legged_gazebo_ros/src/legged_gazebo",
+    "C_Cpp.errorSquiggles": "disabled",
+    "ros.distro": "noetic"
+}

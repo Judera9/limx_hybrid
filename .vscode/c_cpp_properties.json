@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/opt/openrobots/include/pinocchio/**",
+                "/opt/openrobots/include",
+                "/usr/include/eigen3",
+                "${workspaceFolder}/third_party/PoplarLib/third_party/qpOASES/include",
+                "${workspaceFolder}/third_party/PoplarLib/include",
+                "${workspaceFolder}/third_party/PoplarLib/third_party/eiquadprog/include"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
