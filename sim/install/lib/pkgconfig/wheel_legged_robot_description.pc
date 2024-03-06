@@ -1,4 +1,4 @@
-prefix=/home/clear/limx_hybrid2/wheel_legged_gazebo_ros/install
+prefix=/home/clear/limx_hybrid2/sim/install
 
 Name: wheel_legged_robot_description
 Description: Description of wheel_legged_robot_description

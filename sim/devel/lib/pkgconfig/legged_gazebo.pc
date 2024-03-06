@@ -1,8 +1,8 @@
-prefix=/home/clear/limx_hybrid2/wheel_legged_gazebo_ros/devel
+prefix=/home/clear/limx_hybrid2/sim/devel
 
 Name: legged_gazebo
 Description: Description of legged_gazebo
 Version: 0.0.0
-Cflags: -I/home/clear/limx_hybrid2/wheel_legged_gazebo_ros/src/legged_gazebo/include
+Cflags: -I/home/clear/limx_hybrid2/sim/src/legged_gazebo/include
 Libs: -L${prefix}/lib -lwheel_legged_hw_sim
 Requires: roscpp gazebo_ros_control hardware_interface realtime_tools limx_robot_sdk_sim

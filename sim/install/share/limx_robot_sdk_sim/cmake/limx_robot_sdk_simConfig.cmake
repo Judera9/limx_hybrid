@@ -67,14 +67,14 @@ set(limx_robot_sdk_sim_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(limx_robot_sdk_sim_SOURCE_PREFIX /home/clear/limx_hybrid2/wheel_legged_gazebo_ros/src/limx_robot_sdk_sim)
-  set(limx_robot_sdk_sim_DEVEL_PREFIX /home/clear/limx_hybrid2/wheel_legged_gazebo_ros/devel)
+  set(limx_robot_sdk_sim_SOURCE_PREFIX /home/clear/limx_hybrid2/sim/src/limx_robot_sdk_sim)
+  set(limx_robot_sdk_sim_DEVEL_PREFIX /home/clear/limx_hybrid2/sim/devel)
   set(limx_robot_sdk_sim_INSTALL_PREFIX "")
   set(limx_robot_sdk_sim_PREFIX ${limx_robot_sdk_sim_DEVEL_PREFIX})
 else()
   set(limx_robot_sdk_sim_SOURCE_PREFIX "")
   set(limx_robot_sdk_sim_DEVEL_PREFIX "")
-  set(limx_robot_sdk_sim_INSTALL_PREFIX /home/clear/limx_hybrid2/wheel_legged_gazebo_ros/install)
+  set(limx_robot_sdk_sim_INSTALL_PREFIX /home/clear/limx_hybrid2/sim/install)
   set(limx_robot_sdk_sim_PREFIX ${limx_robot_sdk_sim_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/clear/limx_hybrid2/wheel_legged_gazebo_ros/install/lib;/opt/ros/noetic/lib)
+    foreach(path /home/clear/limx_hybrid2/sim/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

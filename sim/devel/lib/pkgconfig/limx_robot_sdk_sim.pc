@@ -1,8 +1,8 @@
-prefix=/home/clear/limx_hybrid2/wheel_legged_gazebo_ros/devel
+prefix=/home/clear/limx_hybrid2/sim/devel
 
 Name: limx_robot_sdk_sim
 Description: Description of limx_robot_sdk_sim
 Version: 0.0.1
-Cflags: -I/home/clear/limx_hybrid2/wheel_legged_gazebo_ros/src/limx_robot_sdk_sim/include
+Cflags: -I/home/clear/limx_hybrid2/sim/src/limx_robot_sdk_sim/include
 Libs: -L${prefix}/lib 
 Requires: roscpp

@@ -67,14 +67,14 @@ set(legged_gazebo_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(legged_gazebo_SOURCE_PREFIX /home/clear/limx_hybrid2/wheel_legged_gazebo_ros/src/legged_gazebo)
-  set(legged_gazebo_DEVEL_PREFIX /home/clear/limx_hybrid2/wheel_legged_gazebo_ros/devel)
+  set(legged_gazebo_SOURCE_PREFIX /home/clear/limx_hybrid2/sim/src/legged_gazebo)
+  set(legged_gazebo_DEVEL_PREFIX /home/clear/limx_hybrid2/sim/devel)
   set(legged_gazebo_INSTALL_PREFIX "")
   set(legged_gazebo_PREFIX ${legged_gazebo_DEVEL_PREFIX})
 else()
   set(legged_gazebo_SOURCE_PREFIX "")
   set(legged_gazebo_DEVEL_PREFIX "")
-  set(legged_gazebo_INSTALL_PREFIX /home/clear/limx_hybrid2/wheel_legged_gazebo_ros/install)
+  set(legged_gazebo_INSTALL_PREFIX /home/clear/limx_hybrid2/sim/install)
   set(legged_gazebo_PREFIX ${legged_gazebo_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/clear/limx_hybrid2/wheel_legged_gazebo_ros/install/lib;/opt/ros/noetic/lib)
+    foreach(path /home/clear/limx_hybrid2/sim/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

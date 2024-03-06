@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/clear/limx_hybrid2/wheel_legged_gazebo_ros/devel/setup.sh
+    local-name: /home/clear/limx_hybrid2/sim/devel/setup.sh

@@ -67,14 +67,14 @@ set(limx_robot_sdk_sim_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(limx_robot_sdk_sim_SOURCE_PREFIX /home/clear/limx_hybrid2/wheel_legged_gazebo_ros/src/limx_robot_sdk_sim)
-  set(limx_robot_sdk_sim_DEVEL_PREFIX /home/clear/limx_hybrid2/wheel_legged_gazebo_ros/devel)
+  set(limx_robot_sdk_sim_SOURCE_PREFIX /home/clear/limx_hybrid2/sim/src/limx_robot_sdk_sim)
+  set(limx_robot_sdk_sim_DEVEL_PREFIX /home/clear/limx_hybrid2/sim/devel)
   set(limx_robot_sdk_sim_INSTALL_PREFIX "")
   set(limx_robot_sdk_sim_PREFIX ${limx_robot_sdk_sim_DEVEL_PREFIX})
 else()
   set(limx_robot_sdk_sim_SOURCE_PREFIX "")
   set(limx_robot_sdk_sim_DEVEL_PREFIX "")
-  set(limx_robot_sdk_sim_INSTALL_PREFIX /home/clear/limx_hybrid2/wheel_legged_gazebo_ros/install)
+  set(limx_robot_sdk_sim_INSTALL_PREFIX /home/clear/limx_hybrid2/sim/install)
   set(limx_robot_sdk_sim_PREFIX ${limx_robot_sdk_sim_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(limx_robot_sdk_sim_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/clear/limx_hybrid2/wheel_legged_gazebo_ros/src/limx_robot_sdk_sim/include " STREQUAL " ")
+if(NOT "/home/clear/limx_hybrid2/sim/src/limx_robot_sdk_sim/include " STREQUAL " ")
   set(limx_robot_sdk_sim_INCLUDE_DIRS "")
-  set(_include_dirs "/home/clear/limx_hybrid2/wheel_legged_gazebo_ros/src/limx_robot_sdk_sim/include")
+  set(_include_dirs "/home/clear/limx_hybrid2/sim/src/limx_robot_sdk_sim/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/clear/limx_hybrid2/wheel_legged_gazebo_ros/src/limx_robot_sdk_sim/
         message(FATAL_ERROR "Project 'limx_robot_sdk_sim' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'limx_robot_sdk_sim' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/clear/limx_hybrid2/wheel_legged_gazebo_ros/src/limx_robot_sdk_sim/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'limx_robot_sdk_sim' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/clear/limx_hybrid2/sim/src/limx_robot_sdk_sim/${idir}'.  ${_report}")
     endif()
     _list_append_unique(limx_robot_sdk_sim_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/clear/limx_hybrid2/wheel_legged_gazebo_ros/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/clear/limx_hybrid2/sim/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

@@ -56,9 +56,54 @@ int main()
     dataSets.robotModelData.hrfootID = dataSets.robotModelData.model.getBodyId(param.RH_foot);
     dataSets.robotModelData.baseID = dataSets.robotModelData.model.getBodyId(param.BASE);
 
-    Estimator estimator(&dataSets.sharedMemory().measuredState, // TODO: measuredState
+    // TODO: comment?
+    Estimator estimator(&dataSets.measuredState,
                         &dataSets.robotModelData,
                         &dataSets.estimatedState,
                         &dataSets.switchState,
                         &param);
+
+    GaitScheduler gait(&dataSets.estimatedState,
+                       &dataSets.userCmd,
+                       &dataSets.gaitData,
+                       &param);
+
+    Planner planner(&dataSets.estimatedState,
+                    &dataSets.robotModelData,
+                    &dataSets.userCmd,
+                    &dataSets.gaitData,
+                    &dataSets.tasksData,
+                    &dataSets.switchState,
+                    &param);
+
+    Controller controller(&dataSets.estimatedState,
+                          &dataSets.robotModelData,
+                          &dataSets.tasksData,
+                          &dataSets.gaitData,
+                          &dataSets.userCmd,
+                          &dataSets.jointsCmd,
+                          &dataSets.switchState,
+                          &param);
+
+    UserInterface userInterface(&param, &dataSets.userCmd);
+
+Timer t;
+    double time_init = t.getMs();
+    size_t iter = 0;
+
+    while (!exitrequest) {
+            cout << std::setprecision(9) << "time: " << t.getMs() << endl;
+            double time_control_start;
+            time_control_start = t.getMs();
+            dataSets.jointsCmd.tau_ff.setZero(); // set all initial motor input to zero
+            userInterface.update_keyboard(); //receive user input from the joystick/keyboard
+            estimator.estimate(); // estimate states and model
+
+            gait.step();
+            planner.plan();
+            controller.run();
+            double time_control_end;
+            time_control_end = t.getMs();
+            std::cout << "t: " << (time_control_end - time_control_start) << std::endl;
+    }
 }

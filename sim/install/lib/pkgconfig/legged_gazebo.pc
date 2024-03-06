@@ -1,4 +1,4 @@
-prefix=/home/clear/limx_hybrid2/wheel_legged_gazebo_ros/install
+prefix=/home/clear/limx_hybrid2/sim/install
 
 Name: legged_gazebo
 Description: Description of legged_gazebo

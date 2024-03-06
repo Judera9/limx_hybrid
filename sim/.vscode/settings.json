@@ -1,5 +1,13 @@
 {
-    "cmake.sourceDirectory": "/home/clear/limx_hybrid2/wheel_legged_gazebo_ros/src/legged_gazebo",
+    "cmake.sourceDirectory": "/home/clear/limx_hybrid2/sim/src/legged_gazebo",
     "C_Cpp.errorSquiggles": "disabled",
-    "ros.distro": "noetic"
+    "ros.distro": "noetic",
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "/opt/openrobots/lib/python3.10/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "/opt/openrobots/lib/python3.10/site-packages"
+    ]
 }

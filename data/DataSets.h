@@ -14,7 +14,6 @@
 #include "UserCmd.h"
 #include "RobotModelData.h"
 #include "GaitData.h"
-#include "SharedMemoryInterface.h"
 #include "Param.h" // TODO: adjust UserParameterHandler
 
 class DataSets {
@@ -26,13 +25,14 @@ public:
     }
 
     // SharedMemoryObject<SharedMemoryInterface> sharedMemory; // do not use shared memory anymore
-    
+    MeasuredState measuredState;
     EstimatedState estimatedState;
     SwitchState switchState;
     RobotModelData robotModelData;
     TasksData tasksData;
     UserCmd userCmd;
     GaitData gaitData;
+    JointsCmd jointsCmd;
 };
 
 #endif //XIAOTIANHYBRID_DATASETS_H
